@@ -3,3 +3,11 @@ obj/
 *.db
 *.db-shm
 *.db-wal
+
+# build & db
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
