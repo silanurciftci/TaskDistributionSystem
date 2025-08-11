@@ -1,0 +1,19 @@
+@model TaskDistributionSystem.Models.Islem
+@{ ViewData["Title"] = "Yeni İşlem"; }
+<h2>Yeni İşlem</h2><hr/>
+<form asp-action="Create" method="post">
+  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="mb-3">
+    <label asp-for="Ad" class="form-label"></label>
+    <input asp-for="Ad" class="form-control" />
+    <span asp-validation-for="Ad" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="Zorluk" class="form-label"></label>
+    <input asp-for="Zorluk" type="number" min="1" max="8" class="form-control" />
+    <span asp-validation-for="Zorluk" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Kaydet</button>
+  <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

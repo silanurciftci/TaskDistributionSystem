@@ -1,0 +1,16 @@
+@model TaskDistributionSystem.Models.Gorev
+@{ ViewData["Title"] = "Görev Detay"; }
+<h2>Görev Detay</h2><hr/>
+<dl class="row">
+  <dt class="col-sm-2">Ad</dt><dd class="col-sm-10">@Model.Ad</dd>
+  <dt class="col-sm-2">Tarih</dt><dd class="col-sm-10">@Model.Tarih.ToString("yyyy-MM-dd")</dd>
+  <dt class="col-sm-2">Açıklama</dt><dd class="col-sm-10">@Model.Aciklama</dd>
+  <dt class="col-sm-2">İşlem</dt><dd class="col-sm-10">@Model.Islem?.Ad (@Model.Islem?.Zorluk)</dd>
+  <dt class="col-sm-2">Personel</dt>
+  <dd class="col-sm-10">@((Model.Personel!=null)?Model.Personel.Ad + " " + Model.Personel.Soyad : "-")</dd>
+</dl>
+<form asp-action="AutoAssign" method="post">
+  <input type="hidden" name="id" value="@Model.Id" />
+  <button type="submit" class="btn btn-outline-primary">Otomatik Ata</button>
+  <a class="btn btn-secondary" asp-action="Index">Listeye Dön</a>
+</form>

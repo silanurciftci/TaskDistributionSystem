@@ -1,0 +1,10 @@
+@model TaskDistributionSystem.Models.Personel
+@{ ViewData["Title"] = "Personel Sil"; }
+<h2>Personel Sil</h2><hr/>
+<h5>Bu kaydı silmek istediğinize emin misiniz?</h5>
+<p>@Model.Ad @Model.Soyad</p>
+<form asp-action="Delete" method="post">
+  <input type="hidden" asp-for="Id" />
+  <button type="submit" class="btn btn-danger">Sil</button>
+  <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+</form>

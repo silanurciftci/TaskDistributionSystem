@@ -1,0 +1,20 @@
+@model IEnumerable<TaskDistributionSystem.Models.Personel>
+@{ ViewData["Title"] = "Personel Listesi"; }
+<h2 class="mb-3">Personel Listesi</h2>
+<p><a class="btn btn-primary" asp-action="Create">Yeni Personel</a></p>
+<table class="table table-bordered table-striped">
+  <thead><tr><th>Ad</th><th>Soyad</th><th style="width:220px;">İşlemler</th></tr></thead>
+  <tbody>
+  @foreach (var p in Model)
+  {
+    <tr>
+      <td>@p.Ad</td><td>@p.Soyad</td>
+      <td>
+        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@p.Id">Detay</a>
+        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Düzenle</a>
+        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Sil</a>
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
