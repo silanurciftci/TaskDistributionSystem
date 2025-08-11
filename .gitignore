@@ -11,3 +11,8 @@ obj/
 *.db-shm
 *.db-wal
 .DS_Store
+
+# sqlite
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
